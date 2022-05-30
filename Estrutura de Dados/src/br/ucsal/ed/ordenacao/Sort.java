@@ -1,12 +1,12 @@
 package br.ucsal.ed.ordenacao;
 
 public class Sort {
-	static int[] x = {7234, 323, 34345756, 9, 287, 4545, 445, 6, 8232, 10434};
-	int j, eleito, menor, pos;
+	static int[] x = {7234, 323, 34345756, 9, 287};
+	int j, eleito, menor, pos, aux;
 	
 	public static void main(String[] args) {
 		Sort ordem = new Sort();
-		ordem.selectionSort(x);
+		ordem.bubbleSort(x);
 	}
 	
 	public void insertionSort(int[] x) {
@@ -38,6 +38,21 @@ public class Sort {
 			if (menor < eleito) {
 				x[i] = x[pos];
 				x[pos] = eleito;
+			}
+		}
+		for (int i = 0; i < x.length; i++) {
+			System.out.print(x[i] + " ");
+		}
+	}
+	
+	public void bubbleSort(int[] x) {
+		for (int n = 1; n < x.length; n++) {
+			for (int i = 0; i < x.length - 1; i++) {
+				if (x[i] > x[i + 1]) {
+					aux = x[i];
+					x[i] = x[i + 1];
+					x[i + 1] = aux;
+				}
 			}
 		}
 		for (int i = 0; i < x.length; i++) {
