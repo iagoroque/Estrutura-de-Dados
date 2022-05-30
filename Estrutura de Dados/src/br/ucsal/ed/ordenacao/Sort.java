@@ -59,4 +59,14 @@ public class Sort {
 			System.out.print(x[i] + " ");
 		}
 	}
+	
+	public void mergeSort(int[] x, int inicio, int fim) {
+		int meio;
+		if (inicio < fim) {
+			meio = (inicio + fim) / 2;
+			mergeSort(x, inicio, meio);
+			mergeSort(x, meio + 1, fim);
+			// falta o intercala.
+		}
+	}
 }
